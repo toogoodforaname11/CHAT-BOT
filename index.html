@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy / Politique de confidentialité — Kairo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #7c6aff;
+      --accent-glow: rgba(124, 106, 255, 0.15);
+      --bg: #09090b;
+      --surface: rgba(255, 255, 255, 0.03);
+      --surface-hover: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.06);
+      --border-accent: rgba(124, 106, 255, 0.2);
+      --text: #a1a1aa;
+      --text-bright: #fafafa;
+      --text-dim: #52525b;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -40%;
+      left: -20%;
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(124, 106, 255, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -30%;
+      right: -20%;
+      width: 70%;
+      height: 70%;
+      background: radial-gradient(ellipse, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 72px 28px 100px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #5b4fd4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 0 24px rgba(124, 106, 255, 0.25);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      letter-spacing: 0.04em;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1.25;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .updated {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+    }
+
+    .updated::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.1s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+    .section:nth-child(5) { animation-delay: 0.2s; }
+    .section:nth-child(6) { animation-delay: 0.25s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+
+    /* Bilingual cards */
+    .bilingual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-accent);
+      background: var(--surface-hover);
+    }
+
+    .card.fr {
+      border-color: rgba(124, 106, 255, 0.08);
+    }
+
+    .lang-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding: 3px 8px;
+      background: var(--accent-glow);
+      border-radius: 4px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.75;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .card li {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .card li::marker {
+      color: var(--accent);
+    }
+
+    /* Tech table */
+    .tech-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .tech-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--bg);
+    }
+
+    .tech-row.head {
+      background: var(--surface);
+    }
+
+    .tech-cell {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      color: var(--text);
+      border-right: 1px solid var(--border);
+    }
+
+    .tech-cell:last-child { border-right: none; }
+
+    .tech-row.head .tech-cell {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+
+    .tech-cell .accent {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Contact section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-card {
+      padding: 28px;
+      border-radius: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 0 30px rgba(124, 106, 255, 0.06);
+    }
+
+    .contact-card p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p:last-child { margin-bottom: 0; }
+
+    .contact-card strong {
+      color: var(--text-bright);
+    }
+
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .contact-card a:hover {
+      color: #9d93ff;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: var(--accent-glow);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .email-link:hover {
+      background: rgba(124, 106, 255, 0.2);
+      box-shadow: 0 0 20px rgba(124, 106, 255, 0.15);
+      color: #b4abff;
+    }
+
+    .email-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+      margin: 56px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 32px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .bilingual,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .tech-row {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .tech-row:last-child .tech-cell:last-child {
+        border-bottom: none;
+      }
+
+      .hero h1 { font-size: 1.6rem; }
+      .container { padding: 40px 18px 60px; }
+      .logo-mark { width: 36px; height: 36px; font-size: 1.1rem; border-radius: 10px; }
+      .logo-text { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-mark">K</div>
+      <div class="logo-text">Kairo</div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Politique de confidentialit&eacute;</p>
+      <span class="updated">Last updated / Derni&egrave;re mise &agrave; jour: March 27, 2026</span>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Who We Are / Qui nous sommes</h2>
+      </div>
+      <div class="bilingual">
+        <div class="card">
+          <span class="lang-label">English</span>
+          <p><strong>Kairo</strong> provides the chatbot technology for AMS Clinic. We collect and transmit your information to AMS Clinic; we do not provide healthcare services or process insurance claims.</p>
+        </div>
+        <div class="card fr">
+          <span class="lang-label">Fran&ccedil;ais</span>
+          <p><strong>Kairo</strong> fournit la technologie de chatbot pour la Clinique AMS. Nous collectons et transmettons vos informations &agrave; la Clinique AMS; nous ne fournissons pas de services de sant&eacute; ni ne traitons de r&eacute;clamations d'assurance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">What We Collect / Ce que nous collectons</h2>
+      </div>
+      <div class="bilingual">
+        <div class="card">
+          <span class="lang-label">English</span>
+          <ul>
+            <li>Name, email, phone number</li>
+            <li>Language preference (English/French)</li>
+            <li>Reason for inquiry (including injury type, treatment interest)</li>
+            <li>Insurance/claim numbers (if applicable)</li>
+          </ul>
+        </div>
+        <div class="card fr">
+          <span class="lang-label">Fran&ccedil;ais</span>
+          <ul>
+            <li>Nom, courriel, num&eacute;ro de t&eacute;l&eacute;phone</li>
+            <li>Pr&eacute;f&eacute;rence linguistique (anglais/fran&ccedil;ais)</li>
+            <li>Motif de la demande (y compris type de blessure, int&eacute;r&ecirc;t pour le traitement)</li>
+            <li>Num&eacute;ros d'assurance/r&eacute;clamation (le cas &eacute;ch&eacute;ant)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">What We Do With It / Ce que nous en faisons</h2>
+      </div>
+      <div class="bilingual">
+        <div class="card">
+          <span class="lang-label">English</span>
+          <p>We immediately transmit your information to AMS Clinic staff via email. We <strong>do not store chat transcripts</strong> &mdash; your conversation is processed in real-time and not retained after transmission.</p>
+        </div>
+        <div class="card fr">
+          <span class="lang-label">Fran&ccedil;ais</span>
+          <p>Nous transmettons imm&eacute;diatement vos informations au personnel de la Clinique AMS par courriel. Nous <strong>ne conservons pas les transcriptions de chat</strong> &mdash; votre conversation est trait&eacute;e en temps r&eacute;el et n'est pas retenue apr&egrave;s la transmission.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Technical Details / D&eacute;tails techniques</h2>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-row head">
+          <div class="tech-cell">Element / &Eacute;l&eacute;ment</div>
+          <div class="tech-cell">Details / D&eacute;tails</div>
+        </div>
+        <div class="tech-row">
+          <div class="tech-cell">Chatbot platform / Plateforme de chatbot</div>
+          <div class="tech-cell">Voiceflow <span class="accent">(United States / &Eacute;tats-Unis)</span></div>
+        </div>
+        <div class="tech-row">
+          <div class="tech-cell">Data storage / Stockage de donn&eacute;es</div>
+          <div class="tech-cell">None &mdash; transcripts disabled / Aucun &mdash; transcriptions d&eacute;sactiv&eacute;es</div>
+        </div>
+        <div class="tech-row">
+          <div class="tech-cell">Transmission / Transmission</div>
+          <div class="tech-cell">Encrypted email to AMS Clinic / Courriel chiffr&eacute; &agrave; la Clinique AMS</div>
+        </div>
+        <div class="tech-row">
+          <div class="tech-cell">Retention / Conservation</div>
+          <div class="tech-cell">Deleted from Voiceflow after session ends / Supprim&eacute; de Voiceflow apr&egrave;s la fin de la session</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Your Rights / Vos droits</h2>
+      </div>
+      <div class="bilingual">
+        <div class="card">
+          <span class="lang-label">English</span>
+          <p>Contact <strong>AMS Clinic directly</strong> for:</p>
+          <ul>
+            <li>Access to your information</li>
+            <li>Corrections or deletion requests</li>
+            <li>Questions about how they use your data</li>
+          </ul>
+          <p>We cannot fulfill these requests &mdash; we do not retain your data.</p>
+        </div>
+        <div class="card fr">
+          <span class="lang-label">Fran&ccedil;ais</span>
+          <p>Contactez <strong>directement la Clinique AMS</strong> pour :</p>
+          <ul>
+            <li>Acc&eacute;der &agrave; vos informations</li>
+            <li>Demandes de correction ou de suppression</li>
+            <li>Questions sur l'utilisation de vos donn&eacute;es</li>
+          </ul>
+          <p>Nous ne pouvons pas r&eacute;pondre &agrave; ces demandes &mdash; nous ne conservons pas vos donn&eacute;es.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="lang-label">English</span>
+          <p><strong>Kairo</strong> &mdash; <a href="https://kairo.chat">kairo.chat</a></p>
+          <a href="mailto:nick@kairo.chat" class="email-link">
+            <svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            nick@kairo.chat
+          </a>
+          <p style="margin-top: 14px;">For healthcare-specific questions, contact <strong>AMS Clinic</strong>.</p>
+        </div>
+        <div class="contact-card" style="border-color: rgba(124, 106, 255, 0.08);">
+          <span class="lang-label">Fran&ccedil;ais</span>
+          <p><strong>Kairo</strong> &mdash; <a href="https://kairo.chat">kairo.chat</a></p>
+          <a href="mailto:nick@kairo.chat" class="email-link">
+            <svg viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+            nick@kairo.chat
+          </a>
+          <p style="margin-top: 14px;">Pour les questions relatives aux soins de sant&eacute;, contactez la <strong>Clinique AMS</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 Kairo. All rights reserved / Tous droits r&eacute;serv&eacute;s.
+      <br><a href="https://kairo.chat">kairo.chat</a>
+    </footer>
+
+  </div>
+</body>
+</html>
